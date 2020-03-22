@@ -13,10 +13,11 @@ logger = logging.getLogger(__name__)
 '''
 说明：
 1、用例创建原则，测试文件名必须以“test”开头，测试函数必须以“test”开头。
-2、运行方式：进入当前文件目录,在命令行下执行
-  > python3 run_tests.py -m run  (回归模式，生成HTML报告)
+2、运行方式：
+  > python3 run_tests.py -v (回归模式，生成HTML报告)
   > python3 run_tests.py -m debug  (调试模式)
 '''
+
 
 def init_env(now_time):
     """
@@ -24,6 +25,7 @@ def init_env(now_time):
     """
     os.mkdir(REPORT_DIR + now_time)
     os.mkdir(REPORT_DIR + now_time + "/image")
+
 
 @click.command()
 @click.option('-m', default=None, help='输入运行模式：run 或 debug.')
